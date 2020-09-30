@@ -7,4 +7,5 @@ books_blueprint = Blueprint("books", __name__)
 
 @books_blueprint.route('/books')
 def books():
-    return "book library coming SOON!"
+    books = book_repository.select_all() # NEW
+    return render_template("index.html", all_books = books)

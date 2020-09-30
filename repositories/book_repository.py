@@ -11,6 +11,20 @@ def save(book):
     book.id = id
     return book
 
+
 def delete_all():
     sql = "DELETE  FROM books"
     run_sql(sql)
+
+
+def select_all():
+    books = []
+
+    sql = "SELECT * FROM books"
+    results = run_sql(sql)
+
+    for row in results:
+        book = Book(row['title'], row['genre'], row['year'], row['id'])
+        books.append(book)
+    return books
+

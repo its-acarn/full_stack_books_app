@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block content %}
 
-<body>
-    LIBRARY COMING!
-</body>
+{% for book in all_books %}
+<div class="book">
+    <div class="content">
+        <div class="title">
+            <a href="/{{book.id}}">{{book.title}}</a>
+            <span class="year">{{book.year}}</span>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
-</html>
+{% endblock  %}
