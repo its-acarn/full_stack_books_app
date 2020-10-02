@@ -14,8 +14,6 @@ author_repository.save(author1)
 author2 = Author("Brandon", "Sanderson")
 author_repository.save(author2)
 
-author_repository.select_all()
-
 book1 = Book("Cats Cradle", "satire", 1963)
 book_repository.save(book1)
 book2 = Book("Breakfast of Champions", "satire", 1973)
